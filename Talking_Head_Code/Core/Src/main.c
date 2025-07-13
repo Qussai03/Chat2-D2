@@ -291,10 +291,10 @@ int main(void)
 		current_x = current_x / 5.0;
 		if(current_x > 0.3 || current_x < -0.3){
 	        // Rotates motor left or right to track the user
-			move_head((-heat_x *100.0)/1);
+			move_head((-current_x *100.0)/1);
 		}
-	  prev_x = current_x;
-
+		current_x = 0;
+	  }
 	// Mouth Display Code
 	  if (full == true) {
 		  ADC_MAX = find_max_adc(&adc_buf, ADC_BUF_LEN);
